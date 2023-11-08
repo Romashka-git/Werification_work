@@ -13,12 +13,28 @@
 // ["1234", "1567", "-2", "computer science"] → ["-2"]
 // ["Russia", "Denmark", "Kazan"] → []
 
+using System.Collections;
+
 string[] array = new string [] {"Hello", "2", "world", ":-)"};
 int length = array.Length;
-int newLength = 0;
+ArrayList list = new ArrayList();
 
 for (int item = 0; item < length; item++){
-    System.Console.Write(array[item] + " ");
-    System.Console.WriteLine(array[item].Length);
+    if (array[item].Length <= 3) {
+        list.Add("\"" + array[item] + "\"");
+    }
 }
 
+
+
+string[] newArray = (string[])list.ToArray(typeof(string));
+
+for (int i = 0; i < newArray.Length; i++){
+    System.Console.Write(newArray[i]);
+    if (i < newArray.Length - 1){
+        System.Console.Write(", ");
+    }
+}
+if (newArray.Length == 0){
+    System.Console.WriteLine("[]");
+} 
