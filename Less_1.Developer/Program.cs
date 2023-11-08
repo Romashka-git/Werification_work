@@ -13,3 +13,12 @@
 // ["1234", "1567", "-2", "computer science"] → ["-2"]
 // ["Russia", "Denmark", "Kazan"] → []
 
+string[] array = new string [] {"Hello", "2", "world", ":-)"};
+int length = array.Length;
+int newLength = 0;
+
+for (int item = 0; item < length; item++){
+    System.Console.Write(array[item] + " ");
+    System.Console.WriteLine(array[item].Length);
+}
+
